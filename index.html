@@ -42,13 +42,13 @@
 
             <div>
                 <p>Цена товара:</p>
-                <input type="text">
+                <input id="price" type="number">
             </div>
 
             <div>
 
                 <p>процент скидки</p>
-                <input type="range" min="0" max="100" value="0" step="25">
+                <input id="range-input" type="range" min="0" max="100" value="0" step="1">
                 <div class="main__steps-percent">
                     <span>0%</span>
                     <span>25%</span>
@@ -62,7 +62,7 @@
 
 
 
-            <button>Расситать скидку</button>
+            <button id="calc-percent">Расситать скидку</button>
 
 
         </main>
