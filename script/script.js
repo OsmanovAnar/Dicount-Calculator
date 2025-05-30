@@ -5,6 +5,14 @@ let resultEl = document.querySelector(".result");
 let enteredPrice = document.querySelector("#entered-price");
 let currentDiscount = document.querySelector("#current-discount");
 
+enteredPrice.innerHTML = `Введенная стоимость: ${priceForm.value}`;
+
+
+priceForm.addEventListener('input', (e) => {
+    console.log(e.target.value);
+    enteredPrice.textContent = `Введенная стоимость: ${e.target.value}`
+})
+
 
 calcPercentBtn.addEventListener("click", () => {
     enteredPrice.textContent = `Введенная стоимость: ${priceForm.value}`;
