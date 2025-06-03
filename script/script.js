@@ -1,21 +1,28 @@
-let priceForm = document.querySelector("#price");
-let rangeInput = document.querySelector("#range-input");
-let calcPercentBtn = document.querySelector("#calc-percent");
-let resultEl = document.querySelector(".result");
-let enteredPrice = document.querySelector("#entered-price");
-let currentDiscount = document.querySelector("#current-discount");
+const priceForm = document.querySelector("#price");
+const rangeInput = document.querySelector("#range-input");
+const calcPercentBtn = document.querySelector("#calc-percent");
+const resultEl = document.querySelector(".result");
+const enteredPrice = document.querySelector("#entered-price");
+const currentDiscount = document.querySelector("#current-discount");
+const discoundDisplayEl = document.querySelector('#discount-display');
+let enteredPriceShow = document.querySelector('#entered-price-show')
 
-enteredPrice.innerHTML = `Введенная стоимость: ${priceForm.value}`;
 
 
-priceForm.addEventListener('input', (e) => {
+enteredPriceShow.addEventListener('input', (e) => {
+    enteredPriceShow.innerHTML = `Введенная стоимость: ${e.target.value}`;
+    console.log(enteredPriceShow);
+})
+
+
+rangeInput.addEventListener('input', (e) => {
     console.log(e.target.value);
-    enteredPrice.textContent = `Введенная стоимость: ${e.target.value}`
+    discoundDisplayEl.textContent = `Текущая скидка: ${rangeInput.value}%`;
 })
 
 
 calcPercentBtn.addEventListener("click", () => {
     enteredPrice.textContent = `Введенная стоимость: ${priceForm.value}`;
-    currentDiscount.textContent = `Текущая скидка: ${rangeInput.value}`;
+
     resultEl.textContent = `Цена с учетом скидки: ${priceForm.value - (priceForm.value * rangeInput.value) / 100}`;
 });
